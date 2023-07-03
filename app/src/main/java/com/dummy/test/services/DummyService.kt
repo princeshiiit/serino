@@ -14,8 +14,5 @@ interface DummyService {
     fun products(@Query("limit") limit: Int): Call<DummyProducts>
 
     @GET("products?skip=5&")
-    fun storeToPref1(@Query("limit") limit: Int)
-
-    @GET("products?skip=5&")
     fun getData(@Query("limit") limit: Int): Call<String>?
 }

@@ -39,7 +39,6 @@ class ProductListActivity : AppCompatActivity() {
                     call: Call<String>,
                     response: Response<String>
                 ) {
-                    Log.e("TEST1:",response.body().toString())
                     editor.putString("pref_data", response.body().toString()).apply()
                 }
 
@@ -69,7 +68,7 @@ class ProductListActivity : AppCompatActivity() {
         } else {
             val gson = Gson()
             val prefData = sharedpref.getString("pref_data","default")
-            Log.e("prefData:",prefData.toString())
+            Log.v("prefData:",prefData.toString())
             val parser = JsonParser()
             val prefDataObj = parser.parse(prefData).asJsonObject
             val person = gson.fromJson(prefDataObj, DummyProducts::class.java)
